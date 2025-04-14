@@ -1,0 +1,10 @@
+---
+- name: Wordpress
+  hosts: Wordpress
+  become: true # instalar con sudo
+  gather_facts: true # información del servidor
+
+  tasks:
+  - name: Print gather_facts
+    ansible.builtin.debug:
+      var: ansible_facts
