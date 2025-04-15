@@ -1,0 +1,14 @@
+---
+- name: wordpress setup v2
+  hosts: wordpress
+  become: true
+
+  vars_files:
+    - variables.yaml
+  
+  roles:
+    - role: apache2
+    - role: mariadb 
+    - role: wordpress
+    
+

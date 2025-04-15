@@ -1,0 +1,2 @@
+- name: Start apache service manualmente (sin systemd)
+  shell: nohup apache2ctl -D FOREGROUND > /var/log/apache_foreground.log 2>&1 &
