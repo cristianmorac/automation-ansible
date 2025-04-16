@@ -14,7 +14,8 @@
     #    enabled: true
 
   # llamar handler: tareas repetitivas
-  notify: Start MariaDB service manualmente (sin systemd)   
+  notify: Start MariaDB service manualmente (sin systemd)
+  meta: flush_handlers   
 
 # llamar python.yaml
 - name: install python depends
@@ -61,3 +62,4 @@
 
 - name: Reload privilege tables
   ansible.builtin.command: mysql -u root -p"{{ mariadb_root_password }}" -e "FLUSH PRIVILEGES;"
+  notify: Start MariaDB service manualmente (sin systemd)

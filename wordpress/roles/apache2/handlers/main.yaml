@@ -1,2 +1,5 @@
 - name: Start apache service manualmente (sin systemd)
   shell: nohup apache2ctl -D FOREGROUND > /var/log/apache_foreground.log 2>&1 &
+
+- name: Restart apache2 manualmente (sin systemd)
+  ansible.builtin.shell: apache2ctl -k restart

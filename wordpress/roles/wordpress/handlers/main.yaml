@@ -1,2 +1,0 @@
-- name: Restart apache2 manualmente (sin systemd)
-  ansible.builtin.shell: apache2ctl -k restart
